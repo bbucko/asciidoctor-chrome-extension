@@ -56,6 +56,9 @@
         "js/asciidocify.js",
         "js/renderer.js",
         "js/vendor/chartist.min.js",
+        "js/vendor/deflate.js",
+        "js/vendor/encode.js",
+        "js/vendor/asciidoctor-plantuml-block.js",
         "js/vendor/asciidoctor-chart-block-macro.js",
         "js/vendor/asciidoctor-emoji-inline-macro.js"
       ]
@@ -80,6 +83,7 @@
     "css/twemoji-awesome.css",
     "css/chartist.min.css",
     "js/vendor/highlight.min.js",
+    "js/vendor/asciidoctor-plantuml-block.js",
     "js/vendor/asciidoctor-chart-block-macro.js",
     "js/vendor/asciidoctor-emoji-inline-macro.js",
     "fonts/fontawesome-webfont.woff2",
