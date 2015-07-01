@@ -39,7 +39,7 @@ if (ch == null) ch = nil;
 
     self.$named("plantuml");
 
-    self.$on_context("open");
+    self.$contexts(["listing", "literal", "open"]);
 
     self.$parse_content_as("raw");
 
@@ -47,9 +47,6 @@ if (ch == null) ch = nil;
       var self = this, content = nil, id = nil, html = nil;
 
       content = reader.$lines().$join("\\n");
-
-      console.log(unescape(encodeURIComponent(content)));
-
       id = $scope.SecureRandom.$uuid();
       html = ((("\n    <img id='") + (id)) + "' src='' />\n    <script>\n      var escaped =  unescape(encodeURIComponent('")['$+'](content)['$+']("'));\n      var encodedAndDeflated = encode64(deflate(escaped, 9));\n      $('#" + (id) + "').attr('src', 'http://www.plantuml.com/plantuml/img/' + encodedAndDeflated);\n    </script>");
       return self.$create_pass_block(parent, html, attrs, $hash2(["subs"], {"subs": nil}));
@@ -64,5 +61,5 @@ if (ch == null) ch = nil;
     };
   return ($a = ($b = $scope.Extensions).$register, $a._p = (TMP_1 = function(){var self = TMP_1._s || this;
 
-  return self.$block($scope.PlantumlBlock)}, TMP_1._s = self, TMP_1), $a).call($b, "markup");
+  return self.$block($scope.PlantumlBlock)}, TMP_1._s = self, TMP_1), $a).call($b);
 })(Opal);
