@@ -46,9 +46,9 @@ if (ch == null) ch = nil;
     return (def.$process = function(parent, reader, attrs) {
       var self = this, content = nil, id = nil, html = nil;
 
-      content = reader.$lines().$join("\\n");
+      content = reader.$lines().$join("\n");
       id = $scope.SecureRandom.$uuid();
-      html = ((("\n    <img id='") + (id)) + "' src='' />\n    <script>\n      var escaped =  unescape(encodeURIComponent('")['$+'](content)['$+']("'));\n      var encodedAndDeflated = encode64(deflate(escaped, 9));\n      $('#" + (id) + "').attr('src', 'http://www.plantuml.com/plantuml/img/' + encodedAndDeflated);\n    </script>");
+      html = ((("\n    <img id='") + (id)) + "' src='' alt='")['$+'](content)['$+']("' />\n    <script>\n      var escaped =  unescape(encodeURIComponent($('#" + (id) + "').attr('alt')));\n      var encodedAndDeflated = encode64(deflate(escaped, 9));\n      $('#" + (id) + "').attr('src', 'http://www.plantuml.com/plantuml/img/' + encodedAndDeflated);\n    </script>");
       return self.$create_pass_block(parent, html, attrs, $hash2(["subs"], {"subs": nil}));
     }, nil) && 'process';
   })(self, ($scope.Extensions)._scope.BlockProcessor);
